@@ -1,0 +1,73 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="1727006088" file="/home/nsavalia/Documents/project/dendrites_ybranchROI/scripts/ybranchROI/ybranchROI.prj" location="/home/nsavalia/Documents/project/dendrites_ybranchROI/scripts/ybranchROI" name="ybranchROI" target="target.mlapps" target-name="Package App">
+    <param.appname>ybranchROI</param.appname>
+    <param.authnamewatermark>Neil K Savalia, Alex C Kwan</param.authnamewatermark>
+    <param.email>neil.savalia@yale.edu</param.email>
+    <param.company>Yale School of Medicine</param.company>
+    <param.icon />
+    <param.icons />
+    <param.summary>This app allows users to take two-photon calcium images of dendrites and segment out Y-branch components for downstream analysis.</param.summary>
+    <param.description>The rough steps of the program are as follows:
+(1) Open up a 3D (x-y-t) two-photon calcium imaging stack as a user-controllable 2D projeciton.
+(2) The user locates a target Y-branch in the FOV and draws a polygonal ROI around it using mouse button clicks. Once a drawing is completed, push it to the threshold &amp; segmentation tabs.
+(3) In the threshold tab, the user draws polygonal ROIs around the three components of the Y-branch as done for the full branch ROI. The individual ROIs can be threhsolded independently to guide how the dendrite is segmented from the background.
+(4) The user clicks the segment button, which initiates spline fitting along the Y-branch components, calculates angles between the components, labels the components as proximal &amp; distal (relative to soma, using calculated angles), and displays the average ROI timecourses in the timecourses panel. The spline fitting and final ROI segmentation are controllable in terms of ROI type (contour, rectangle, spline-shaped), spline smoothness, and ROI weight.
+(5) The back-end data for each Y-branch ROI (from drawing on the original FOV through segmentation and timecourse calculation) can be saved out as a matlab data structure (.m file).</param.description>
+    <param.screenshot>/tmp/tpa216f9d9_55e8_4788_8be7_20e6284b3388.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms>
+      <item>glnxa64</item>
+    </param.platforms>
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>90dda245-fe4a-40a9-ab92-970da7760a2f</param.guid>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.version />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}/ybranchROI.mlapp</file>
+    </fileset.main>
+    <fileset.depfun>
+      <file>/home/nsavalia/Documents/MATLAB/+ScanImageTiffReader/ScanImageTiffReader.m</file>
+      <file>/home/nsavalia/Documents/MATLAB/+ScanImageTiffReader/private/mexScanImageTiffClose.mexa64</file>
+      <file>/home/nsavalia/Documents/MATLAB/+ScanImageTiffReader/private/mexScanImageTiffData.mexa64</file>
+      <file>/home/nsavalia/Documents/MATLAB/+ScanImageTiffReader/private/mexScanImageTiffImageDescriptions.mexa64</file>
+      <file>/home/nsavalia/Documents/MATLAB/+ScanImageTiffReader/private/mexScanImageTiffMetadata.mexa64</file>
+      <file>/home/nsavalia/Documents/MATLAB/+ScanImageTiffReader/private/mexScanImageTiffOpen.mexa64</file>
+      <file>/home/nsavalia/Documents/MATLAB/+ScanImageTiffReader/private/mexScanImageTiffReaderAPIVersion.mexa64</file>
+    </fileset.depfun>
+    <fileset.resources />
+    <fileset.package />
+    <build-deliverables>
+      <file location="/home/nsavalia/Documents/project/dendrites_ybranchROI/scripts" name="ybranchROI" optional="false">/home/nsavalia/Documents/project/dendrites_ybranchROI/scripts/ybranchROI</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/usr/local/MATLAB/R2022b</root>
+      <toolboxes />
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>false</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>true</linux>
+      <solaris>false</solaris>
+      <osver>5.15.0-78-generic</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>glnxa64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
